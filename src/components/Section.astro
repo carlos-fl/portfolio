@@ -1,0 +1,15 @@
+---
+import "../styles/global.css";
+
+const { sectionName } = Astro.props
+
+---
+
+<div class="flex items-center p-2">
+  <div>
+    <h2 class="font-text text-[var(--text-color)] text-3xl mr-2">~$</h2>
+  </div>
+  <div>
+    <h2 class="font-text text-4xl text-[var(--text-color)]">{ sectionName }</h2>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+---
+import "../styles/global.css";
+import Tag from "./Tag.astro";
+
+const { stack } = Astro.props
+---
+
+<div class="overflow-x-hidden">
+  <div class="grid grid-flow-col grid-rows-2 gap-4 animate-ticker">
+  {
+  stack.map((tech) => (<Tag tag={ tech } />))
+  } 
+  </div>
+</div>
+

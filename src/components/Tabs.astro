@@ -1,0 +1,41 @@
+---
+import "../styles/global.css";
+
+const { tabs } = Astro.props
+
+---
+
+
+<div class="flex justify-start text-sm font-medium font-text text-center text-[var(--text-color)] border-b border-[var(--bg-tag)] dark:text-gray-400 dark:border-gray-700">
+    {
+    tabs.map((tab) => (
+    <button class="me-2 inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 btn">
+      { tab }
+    </button>
+    ))
+    } 
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn') 
+    buttons[0].style.color = "#EFF1F3"
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (event) => {
+        activeTab(buttons, event.target)
+        console.log(event.target.innerHTML) 
+      })
+    })
+  })
+  
+  function activeTab(buttons, button) {
+    console.log(buttons, button)
+    buttons.forEach(btn => {
+      if (btn === button) {
+        btn.style.color = "#EFF1F3"
+      } else {
+        btn.style.color = "gray"
+      }
+    })
+  }
+</script>

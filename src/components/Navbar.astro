@@ -1,0 +1,30 @@
+---
+import "../styles/global.css";
+import Language from "./Language.astro";
+
+const { links } = Astro.props
+---
+
+<!-- TODO: take element for spanish and english -->
+
+<div class="flex justify-between items-center w-full h-18">
+  <div class="flex justify-between w-2/6 text-[var(--text-color)]">
+    <div class="font-title">
+       <a href="#home"><h3 class="font-title text-2xl">JC</h3></a>
+    </div>
+    {
+    links.map((link) => (<div class="font-text"><a href={link.href}>{ link.name }</a></div>))
+    } 
+  </div>
+  <div class="flex justify-between items-center w-1/5 text-3xl">
+    <div>
+      <a href="https://github.com/carlos-fl/" target="_blank"><i class="fa-brands fa-github text-[var(--bg-tag)]"></i></a>
+    </div>
+    <div>
+      <a href="mailto:carlosftru@gmail.com"><i class="fa-solid fa-envelope text-[var(--bg-tag)]"></i></a>
+    </div>
+    <div>
+      <Language />
+    </div>
+  </div>
+</div>

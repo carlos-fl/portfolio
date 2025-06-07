@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+
+const { desc, textSize, targets } = Astro.props;
+
+const regex = new RegExp(`\\b(${targets.join('|')})\\b`, 'gi');
+
+const parts = desc.split(regex);
+
+const structuredDescription = parts.map((word, index) => {
+  const isTarget = targets.some(target => target.toLowerCase() === word.toLowerCase());
+
+  if (isTarget) {
+  return `<span class="text-[var(--span-color)]">${word}</span>`;
+  } else {
+    return `<span class="font-text text-[var(--text-color)]">${word}</span>`;
+  }
+}).join('');
+---
+<div class={textSize}>
+  <h3 set:html={structuredDescription} />
+</div>
+

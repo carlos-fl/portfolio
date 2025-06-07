@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Playwrite+US+Modern:wght@100..400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --title-color: #D77A61;
+  --span-color: #D8B4A0;
+  --bg-color: #223843;
+  --text-color: #EFF1F3;
+  --bg-tag: #DBD3D8;
+  --text-section: 18rem;
+  --h-section: 80vh;
+}
+
+@theme {
+  --font-title: "Luckiest Guy";
+  --font-text: "Playwrite US Modern";
+  
+ --animate-ticker: marquee 20s cubic-bezier(1,1,1,1) infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(10%)
+    }
+    100% {
+      transform: translateX(-90%)
+    }
+  }
+}
+
+
+
+
+
+
