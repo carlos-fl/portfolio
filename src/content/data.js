@@ -76,50 +76,50 @@ export const data = {
             "href": "#projects"
           }
         ]
+      },
+        "homeDescription": {
+          "desc": "Software enthusiast, currently focused on Full Stack development."
+        },
+        "aboutDescription": {
+          "desc": "Soon-to-be graduate in Systems Engineering. Interested in web development and lower-level systems such as tool creation.",
+          "span": "Technologies I have worked with"
+        },
+        "footerDescription": {
+          "desc": "built and designed by Juan Carlos Flores",
+          "rights": "All rights reserved"
+        },
+        "projects": [
+          {
+            "title": "Academic Management System",
+            "desc": "A web-based platform for managing academic and administrative processes at UNAH. Includes modules for admissions, student enrollment, library access, and internal chat.Faculty tools support grade submission, course resource management, and coordination roles. Designed to centralize and streamline university operations for students and staff.",
+            "stack": ["PHP", "MySQL", "Javascript", "HTML", "CSS", "Bootstrap"],
+            "link": "/portfolio-images/registro.png",
+            "urls": ["https://github.com/carlos-fl/proyecto_ingenieria"]
+          },
+          {
+            "title": "CodeSpace",
+            "desc": "A Full Stack web application designed for real-time team coding. Features user authentication, database integration, and support for multiple programming languages. Inspired by platforms like CodePen, enabling collaborative code editing in the browser. Built to streamline team-based coding and prototyping.",
+            "stack": ["Javascript", "HTML", "CSS", "NodeJS", "MongoDB", "Express"],
+            "link": "/portfolio-images/codeSpace.png",
+            "urls": ["https://github.com/carlos-fl/CodeSpace-app"]
+          },
+          {
+            "title": "CRUD DB",
+            "desc": "A desktop tool for managing databases through a user-friendly interface. Allows role and permission assignment, creation of databases, tables, and users, as well as data entry. Designed as a visual alternative to SQL Workbench, with all operations handled via UI—no commands needed.",
+            "stack": ["Python", "PyQt5", "SQL Server"],
+            "link": "/portfolio-images/crud-db.jpeg",
+            "urls": ["https://github.com/carlos-fl/CRUD-BDI"]
+          },
+          {
+            "title": "ETL",
+            "desc": "A web application for designing and executing ETL (Extract, Transform, Load) workflows. Provides a visual interface to build data pipelines without writing code. Inspired by Visual Studio Integration Services, offering drag-and-drop functionality. Simplifies data integration tasks for non-technical users.",
+            "stack": ["Javascript", "HTML", "CSS", "Bootstrap", "NodeJS", "Express"],
+            "link": "/portfolio-images/etl.png",
+            "urls": ["https://github.com/carlos-fl/ETL-BASES2"]
+          }
+        ]
       }
     },
-    "homeDescription": {
-      "desc": "Software enthusiast, currently focused on Full Stack development."
-    },
-    "aboutDescription": {
-      "desc": "Soon-to-be graduate in Systems Engineering. Interested in web development and lower-level systems such as tool creation.",
-      "span": "Technologies I have worked with"
-    },
-    "footerDescription": {
-      "desc": "built and designed by Juan Carlos Flores",
-      "rights": "All rights reserved"
-    },
-    "projects": [
-      {
-        "title": "Academic Management System",
-        "desc": "A web-based platform for managing academic and administrative processes at UNAH. Includes modules for admissions, student enrollment, library access, and internal chat.Faculty tools support grade submission, course resource management, and coordination roles. Designed to centralize and streamline university operations for students and staff.",
-        "stack": ["PHP", "MySQL", "Javascript", "HTML", "CSS", "Bootstrap"],
-        "link": "../../assets/portfolio-images/registro.png",
-        "urls": ["https://github.com/carlos-fl/proyecto_ingenieria"]
-      },
-      {
-        "title": "CodeSpace",
-        "desc": "A Full Stack web application designed for real-time team coding. Features user authentication, database integration, and support for multiple programming languages. Inspired by platforms like CodePen, enabling collaborative code editing in the browser. Built to streamline team-based coding and prototyping.",
-        "stack": ["Javascript", "HTML", "CSS", "NodeJS", "MongoDB", "Express"],
-        "link": "../../assets/portfolio-images/codeSpace.png",
-        "urls": ["https://github.com/carlos-fl/CodeSpace-app"]
-      },
-      {
-        "title": "CRUD DB",
-        "desc": "A desktop tool for managing databases through a user-friendly interface. Allows role and permission assignment, creation of databases, tables, and users, as well as data entry. Designed as a visual alternative to SQL Workbench, with all operations handled via UI—no commands needed.",
-        "stack": ["Python", "PyQt5", "SQL Server"],
-        "link": "../../assets/portfolio-images/crud-db.jpeg",
-        "urls": ["https://github.com/carlos-fl/CRUD-BDI"]
-      },
-      {
-        "title": "ETL",
-        "desc": "A web application for designing and executing ETL (Extract, Transform, Load) workflows. Provides a visual interface to build data pipelines without writing code. Inspired by Visual Studio Integration Services, offering drag-and-drop functionality. Simplifies data integration tasks for non-technical users.",
-        "stack": ["Javascript", "HTML", "CSS", "Bootstrap", "NodeJS", "Express"],
-        "link": "../../assets/portfolio-images/etl.png",
-        "urls": ["https://github.com/carlos-fl/ETL-BASES2"]
-      }
-    ]
-  },
   "stack": {
       "db": ["MongoDB", "MySQL", "Oracle", "SQL Server"],
       "languages": ["Javascript", "PHP", "Python", "Java", "C++"],

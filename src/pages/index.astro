@@ -1,89 +1,14 @@
----
-import "../styles/global.css";
-import Section from '../components/Section.astro';
-import Navbar from "../components/Navbar.astro";
-import Ticker from "../components/Ticker.astro";
-import Description from "../components/Description.astro";
-import Layout from '../layouts/Layout.astro';
-import { TabSwitcher } from "../components/react/TabSwitcher";
-import { Carousel } from "../components/react/Carousel";
-import { data } from "../content/data";
-
-const links = data.languages.spanish.navbar.links
-const homeDescription = data.languages.spanish.homeDescription.desc
-const aboutDescription = data.languages.spanish.aboutDescription.desc
-const techologiesSpan = data.languages.spanish.aboutDescription.span
-
-const stack = Object.keys(data.stack).flatMap((key) => [...(data.stack[key])])
-const stackTabs = Object.keys(data.stack)
-
-const projects = data.languages.spanish.projects
-console.log('projects: ', projects)
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
-
-<Layout>
-  <div class="h-[var(--h-section)] max-w-full">
-    <div class="w-full">
-      <Navbar links={ links } />
-    </div>
-    <div class="h-[var(--h-section)] max-w-full my-10">
-      <section id="home" class="flex flex-col items-center justify-around h-full">
-        <div class="flex flex-col items-center">
-          <div class="font-title text-[var(--span-color)]">
-            <h1 class="text-6xl">JUAN CARLOS FLORES</h1>
-          </div>
-          <div class="max-w-2/5 mt-2">
-            <Description targets={ ["Full Stack"] } desc={ homeDescription } textSize="text-3xl" /> 
-          </div>
-        </div>
-        <div class="flex flex-wrap h-xl max-w-4/5 mb-2">
-          <Ticker stack={ stack } />
-        </div>
-      </section>
-    </div>
-
-    <div class="h-[var(--h-section)] max-w-full mb-10">
-      <section id="about">
-        <div>
-          <Section sectionName="Sobre mi" />
-        </div>
-        <div class="max-w-4/5 mt-2">
-          <Description targets={ ["Ingeniería en Sistemas", "Desarrollo web"] } desc={ aboutDescription } textSize="text-2xl" /> 
-        </div>
-        <div class="mt-10">
-          <div>
-            <h4 class="font-text text-xl text-[var(--text-color)]">{ techologiesSpan }</h4>
-          </div>
-          <div class="mt-3">
-            <TabSwitcher tabs={ stackTabs } client:load />
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="h-[var(--h-section)] max-w-full mb-10 mt-5 py-20">
-      <section id="projects">
-        <div class="flex justify-start">
-          <Section sectionName="Proyectos" />
-        </div>
-        <div class="mt-10">
-          <Carousel projects={ projects } /> 
-        </div>
-      </section>
-    </div>
-
-    <div class="flex flex-col items-center my-8 min-h-xl p-10">
-      <div class="mb-5">
-        <h5 class="text-xs font-text text-[var(--text-color)]">Hecho y Diseñado por Juan Carlos Flores</h5>
-      </div>
-      <div>
-        <h6 class="text-xs font-text text-[var(--text-color)]">Todos los derechos reservados</h6>
-      </div>
-    </div>
-
-  </div>
-  
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; URL=/en/" /> <!-- Fallback -->
+  </head>
+  <body>
+    <script>
+      const lang = localStorage.getItem('lang') || 'es';
+      window.location.replace('/' + lang + '/');
+    </script>
+  </body>
+</html>

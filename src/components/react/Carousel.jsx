@@ -5,23 +5,23 @@ export function Carousel({ projects }) {
   return (
     <div id="default-carousel" class="relative w-full" data-carousel="static">
         <div class="relative h-70  overflow-hidden rounded-lg md:h-96">
-            { projects.map((project) => (
-              <div class="duration-700 ease-in-out group" data-carousel-item>
+            { projects.map((project, index) => (
+              <div class="duration-700 ease-in-out group" data-carousel-item key={ index }>
                 <img src={ project.link} class="absolute hover:opacity-25 block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt={ project.title } />
-                <div className="absolute inset-0 bg-[var(--bg-color)] bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-around p-5">
+                <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col items-center justify-around p-5">
                   <div><h3 className="text-[var(--title-color)] font-title text-xl">{ project.title }</h3></div> 
                   <div><h5 className="text-[var(--span-color)] font-text">{ project.desc }</h5></div> 
                   <div className="grid grid-flow-col grid-rows-2 gap-4">
                     {
-                      project.stack.map((tech) => (
-                        <Tag tag={ tech } />
+                      project.stack.map((tech, index) => (
+                        <Tag tag={ tech } key={ index } />
                       )) 
                     }
                   </div> 
                   <div className="flex justify-center">
                     {
-                      project.urls.map((url) => (
-                        <a href={ url } target="_blank"><i class="fa-brands fa-github text-[var(--bg-tag)] text-4xl mb-2"></i></a>
+                      project.urls.map((url, index) => (
+                        <a href={ url } target="_blank" key={ index }><i className="fa-brands fa-github text-[var(--bg-tag)] text-4xl mb-2"></i></a>
                       ))
                     } 
                   </div>
