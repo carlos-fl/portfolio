@@ -129,3 +129,4 @@ export const data: Data = {
       "frameworks": ["VueJS", "Laravel", "Spring Boot"]
     }
 }
+

@@ -21,7 +21,7 @@ interface Languages {
   english: LanguageData
 }
 
-interface Stack {
+export interface Stack {
   db: Array<string>,
   languages: Array<string>,
   tech: Array<string>,

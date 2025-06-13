@@ -15,7 +15,7 @@ import Layout from '../../layouts/Layout.astro';
 import { TabSwitcher } from "../../components/react/TabSwitcher";
 import { Carousel } from "../../components/react/Carousel";
 import { data } from "../../content/data";
-import type { Link, Project } from "../../interfaces/interfaces";
+import type { Link, Project, Stack } from "../../interfaces/interfaces";
 
 interface Props {
   lang: string
@@ -34,7 +34,7 @@ const techologiesSpan: string | undefined = data.languages[key].aboutDescription
 const footerDescription: string = data.languages[key].footerDescription.desc
 const footerSpan: string | undefined = data.languages[key].footerDescription.span
 
-const stack: Array<string> = Object.keys(data.stack).flatMap((key: string) => [...(data.stack[key])])
+const stack: Array<string> = (Object.keys(data.stack) as Array<keyof Stack>).flatMap((key) => [...data.stack[key]]) 
 const stackTabs: Array<string> = Object.keys(data.stack)
 
 const projects: Array<Project> = data.languages[key].projects
