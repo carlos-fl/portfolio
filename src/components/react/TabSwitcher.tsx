@@ -16,18 +16,11 @@ export function TabSwitcher({ tabs }: { tabs: Array<string> }) {
     <div className="flex flex-col">
       <div className={`flex justify-start text-sm font-medium font-text text-center text-[var(--text-color)] border-b border-[var(--bg-tag)] dark:text-gray-400 dark:border-gray-700`}>
       { 
-        tabs.map((tab) => {
-          let className = ''
-          if (tab == key) {
-            console.log(key)
-            className =  'me-2 inline-block p-4 border-b-2 border-transparent rounded-t-lg text-gray-600 border-gray-300 dark:text-gray-300 btn'
-          } else {
-            className =  'me-2 inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 btn'
-            }
-            return <button onClick={ () => handleClick(tab) } key={ tab } className={ className }>
+        tabs.map((tab) => (
+          <button onClick={ () => handleClick(tab) } key={ tab } className='me-2 inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 btn'>
               { tab } 
           </button>
-      })
+      ))
       }
       </div>
       <div className="grid grid-flow-col grid-rows-2 gap-4">
