@@ -1,7 +1,11 @@
 ---
 import "../styles/global.css";
 
-const { sectionName } = Astro.props
+interface Props {
+  sectionName: string
+}
+
+const { sectionName } = Astro.props as Props
 
 ---
 

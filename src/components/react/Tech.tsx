@@ -1,6 +1,6 @@
 import "../../styles/global.css"
 
-export function Tech({ techName }) {
+export function Tech({ techName }: { techName: string }) {
   return (
     <div className="flex items-center m-5">
       <div>

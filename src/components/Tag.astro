@@ -1,7 +1,11 @@
 ---
 import "../styles/global.css"
 
-const { tag } = Astro.props
+interface Props {
+  tag: string
+}
+
+const { tag } = Astro.props as Props
 ---
 
 

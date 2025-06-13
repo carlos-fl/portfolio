@@ -1,13 +1,18 @@
 ---
 import "../styles/global.css";
 import Language from "./Language.astro";
+import type { Link } from "../interfaces/interfaces"
+
+interface Props {
+  links: Array<Link>
+}
 
 const { links } = Astro.props
 ---
 
 <!-- TODO: take element for spanish and english -->
 
-<div class="flex justify-between items-center w-full h-18">
+<div class="flex justify-between items-center w-4/5 h-18 fixed top-0 z-10 bg-[var(--bg-color)]">
   <div class="flex justify-between w-2/6 text-[var(--text-color)]">
     <div class="font-title">
        <a href="#home"><h3 class="font-title text-2xl">JC</h3></a>

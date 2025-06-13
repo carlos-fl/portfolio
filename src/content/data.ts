@@ -1,4 +1,6 @@
-export const data = {
+import type { Data } from "../interfaces/interfaces" 
+
+export const data: Data = {
   "languages": {
     "spanish": {
       "navbar": {
@@ -26,7 +28,7 @@ export const data = {
       },
       "footerDescription": {
         "desc": "construido y diseñado por Juan Carlos Flores",
-        "rights": "Todos los derechos reservados"
+        "span": "Todos los derechos reservados"
       },
       "projects": 
         [
@@ -48,7 +50,7 @@ export const data = {
             "title": "CRUD DB",
             "desc": "Una herramienta de escritorio para gestionar bases de datos a través de una interfaz amigable. Permite asignar roles y permisos, crear bases de datos, tablas y usuarios, así como llenar tablas con datos. Diseñada como una alternativa visual a SQL Workbench, con todas las operaciones realizadas mediante la interfaz gráfica, sin necesidad de comandos.",
             "stack": ["Python", "PyQt5", "SQL Server"],
-            "link": "/portfolio-images/crud-db.jpeg",
+            "link": "/portfolio-images/crud-db3.jpeg",
             "urls": ["https://github.com/carlos-fl/CRUD-BDI"]
           },
           {
@@ -86,7 +88,7 @@ export const data = {
         },
         "footerDescription": {
           "desc": "built and designed by Juan Carlos Flores",
-          "rights": "All rights reserved"
+          "span": "All rights reserved"
         },
         "projects": [
           {
@@ -107,7 +109,7 @@ export const data = {
             "title": "CRUD DB",
             "desc": "A desktop tool for managing databases through a user-friendly interface. Allows role and permission assignment, creation of databases, tables, and users, as well as data entry. Designed as a visual alternative to SQL Workbench, with all operations handled via UI—no commands needed.",
             "stack": ["Python", "PyQt5", "SQL Server"],
-            "link": "/portfolio-images/crud-db.jpeg",
+            "link": "/portfolio-images/crud-db3.jpeg",
             "urls": ["https://github.com/carlos-fl/CRUD-BDI"]
           },
           {

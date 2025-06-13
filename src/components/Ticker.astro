@@ -2,13 +2,17 @@
 import "../styles/global.css";
 import Tag from "./Tag.astro";
 
-const { stack } = Astro.props
+interface Props {
+  stack: Array<string>
+}
+
+const { stack } = Astro.props as Props
 ---
 
 <div class="overflow-x-hidden">
   <div class="grid grid-flow-col grid-rows-2 gap-4 animate-ticker">
   {
-  stack.map((tech) => (<Tag tag={ tech } />))
+  stack.map((tech: string) => (<Tag tag={ tech } />))
   } 
   </div>
 </div>

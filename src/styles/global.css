@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Playwrite+US+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Luckiest+Guy&family=NTR&family=Playwrite+US+Modern:wght@100..400&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -13,9 +13,12 @@
 
 @theme {
   --font-title: "Luckiest Guy";
-  --font-text: "Playwrite US Modern";
+  --font-text: "Comic Neue";
   
- --animate-ticker: marquee 20s cubic-bezier(1,1,1,1) infinite;
+  --animate-ticker: marquee 20s cubic-bezier(1,1,1,1) infinite;
+  --animate-typewriter: typewriter 2s steps(11) forwards;
+  --animate-caret: typewriter 2s steps(22) forwards, blink 1s step-end infinite 2s;
+  --animate-typing: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
 
   @keyframes marquee {
     0% {
@@ -25,10 +28,17 @@
       transform: translateX(-90%)
     }
   }
+
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--title-color) }
+  }
 }
-
-
-
-
-
 

@@ -1,14 +1,18 @@
 ---
 import "../styles/global.css";
 
-const { tabs } = Astro.props
+interface Props {
+  tabs: Array<string>
+}
+
+const { tabs } = Astro.props as Props
 
 ---
 
 
 <div class="flex justify-start text-sm font-medium font-text text-center text-[var(--text-color)] border-b border-[var(--bg-tag)] dark:text-gray-400 dark:border-gray-700">
     {
-    tabs.map((tab) => (
+    tabs.map((tab: string) => (
     <button class="me-2 inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 btn">
       { tab }
     </button>
@@ -16,21 +20,23 @@ const { tabs } = Astro.props
     } 
 </div>
 
+<!-- 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.btn') 
+    const buttons: Array<HTMLButtonElement> = Array.from(document.querySelectorAll<HTMLButtonElement>('.btn')) 
     buttons[0].style.color = "#EFF1F3"
-    buttons.forEach(btn => {
-      btn.addEventListener('click', (event) => {
-        activeTab(buttons, event.target)
+    buttons.forEach((btn: HTMLButtonElement) => {
+      btn.addEventListener('click', (event: Event) => {
+        console.log(event.target, "EVENT")
+        activeTab(buttons, event?.target)
         console.log(event.target.innerHTML) 
       })
     })
   })
   
-  function activeTab(buttons, button) {
+  function activeTab(buttons: HTMLButtonElement[], button: HTMLButtonElement) {
     console.log(buttons, button)
-    buttons.forEach(btn => {
+    buttons.forEach((btn: HTMLButtonElement) => {
       if (btn === button) {
         btn.style.color = "#EFF1F3"
       } else {
@@ -39,3 +45,5 @@ const { tabs } = Astro.props
     })
   }
 </script>
+-->
+

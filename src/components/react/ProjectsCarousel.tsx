@@ -1,7 +1,8 @@
-import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from './Carousel';
+import type { Project } from '../../interfaces/interfaces';
 
-export default function ProjectCarousel({ projects }) {
+export default function ProjectCarousel({ projects }: { projects: Array<Project> }) {
   return (
     <Carousel autoPlay infiniteLoop>
       {projects.map((project, index) => (

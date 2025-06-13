@@ -1,14 +1,20 @@
 ---
 import "../styles/global.css";
 
-const { desc, textSize, targets } = Astro.props;
+interface Props {
+  desc: string,
+  textSize: string,
+  targets: Array<string>
+}
+
+const { desc, textSize, targets } = Astro.props as Props;
 
 const regex = new RegExp(`\\b(${targets.join('|')})\\b`, 'gi');
 
 const parts = desc.split(regex);
 
 const structuredDescription = parts.map((word, index) => {
-  const isTarget = targets.some(target => target.toLowerCase() === word.toLowerCase());
+  const isTarget = targets.some((target: string) => target.toLowerCase() === word.toLowerCase());
 
   if (isTarget) {
   return `<span class="text-[var(--span-color)]">${word}</span>`;
