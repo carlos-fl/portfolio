@@ -125,7 +125,7 @@ export const data: Data = {
   "stack": {
       "db": ["MongoDB", "MySQL", "Oracle", "SQL Server"],
       "languages": ["Javascript", "PHP", "Python", "Java", "C++"],
-      "tech": ["HTML", "CSS", "Typescript", "NodeJS", "Express"],
+      "tech": ["HTML", "CSS", "Typescript", "NodeJS", "Express", "Figma", "Cisco Packet Tracer"],
       "frameworks": ["VueJS", "Laravel", "Spring Boot"]
     }
 }
