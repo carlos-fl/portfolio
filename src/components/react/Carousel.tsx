@@ -4,7 +4,7 @@ import type { Project } from "../../interfaces/interfaces"
 
 export function Carousel({ projects }: { projects: Array<Project> }) {
   return (
-    <div id="default-carousel" className="relative w-4/5 mx-auto p-3 rounded-lg" data-carousel="carousel">
+    <div id="default-carousel" className="relative sm:w-4/5 w-full mx-auto p-3 rounded-lg" data-carousel="carousel">
         <div className="relative h-70  overflow-hidden rounded-lg md:h-96">
             { projects.map((project, index) => (
               <div className="duration-700 ease-in-out group" data-carousel-item key={ index }>
