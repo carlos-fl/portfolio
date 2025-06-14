@@ -1,8 +1,15 @@
 import "../../styles/global.css"
 import { Tag } from "./Tag"
 import type { Project } from "../../interfaces/interfaces" 
+import { useEffect } from "react"
+import "flowbite"
 
 export function Carousel({ projects }: { projects: Array<Project> }) {
+
+  useEffect(() => {
+
+  }, [])
+
   return (
     <div id="default-carousel" className="relative sm:w-4/5 w-full mx-auto p-3 rounded-lg" data-carousel="carousel">
         <div className="relative h-70  overflow-hidden rounded-lg md:h-96">
