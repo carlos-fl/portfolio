@@ -7,8 +7,8 @@ import "flowbite"
 export function Carousel({ projects }: { projects: Array<Project> }) {
 
   useEffect(() => {
-
-  }, [])
+    import('flowbite')
+  }, [projects])
 
   return (
     <div id="default-carousel" className="relative sm:w-4/5 w-full mx-auto p-3 rounded-lg" data-carousel="carousel">
