@@ -86,7 +86,7 @@ const projects: Array<Project> = data.languages[key].projects
           <Section sectionName={ projectsSection } />
         </div>
         <div class="mt-10">
-          <Projects projects={ projects } client:only />
+          <Projects projects={ projects } client:only="react" />
         </div>
       </section>
     </div>
