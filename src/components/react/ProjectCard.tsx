@@ -1,4 +1,4 @@
-import type { Project } from "../../interfaces/interfaces"
+import type { Project, URL } from "../../interfaces/interfaces"
 import "../../styles/global.css"
 
 export function ProjectCard({ projects }: { projects: Array<Project> }) {
@@ -17,10 +17,21 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
                       }
                     </h6>
                   </div>
-                  <div>
-                    <a href={ project.urls[0] } target="_blank">
-                      <i className="fa-brands fa-github text-[var(--bg-tag)] text-xl mt-2"></i>
-                    </a>
+                  <div className="flex justify-start">
+                    <div className="mr-2">
+                      <a href={ project.github } target="_blank" title="github">
+                        <i className="fa-brands fa-github text-[var(--bg-tag)] text-xl mt-2"></i>
+                      </a>
+                    </div>
+                    {
+                      project.urls.map((url: URL, i: number) => (
+                        <div key={ i } className="mr-2">
+                          <a href={ url.link } target="_blank" title={ url.title }>
+                            <i className="fa-solid fa-arrow-up-right-from-square text-xl text-[var(--bg-tag)] mt-2"></i>
+                          </a>
+                        </div>
+                      ))
+                    }
                   </div>  
               </div>
           </div>

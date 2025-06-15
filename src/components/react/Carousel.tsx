@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../../styles/global.css";
 import { Tag } from "./Tag";
-import type { Project } from "../../interfaces/interfaces";
+import type { Project, URL } from "../../interfaces/interfaces";
 
 export function Carousel({ projects }: { projects: Array<Project> }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,12 +34,21 @@ export function Carousel({ projects }: { projects: Array<Project> }) {
                   <Tag tag={tech} key={i} />
                 ))}
               </div>
-              <div className="flex justify-center">
-                {project.urls.map((url, i) => (
-                  <a href={url} target="_blank" key={i} rel="noopener noreferrer">
+              <div className="flex justify-around w-2/5">
+                <div>
+                  <a href={project.github} target="_blank" key={project.github} rel="noopener noreferrer" title="github">
                     <i className="fa-brands fa-github text-[var(--bg-tag)] text-4xl mb-2"></i>
                   </a>
-                ))}
+                </div>
+                  {
+                    project.urls.map((url: URL, i: number) => (
+                      <div>
+                        <a href={url.link} target="_blank" key={i} rel="noopener noreferrer" title={ url.title }>
+                          <i className="fa-solid fa-arrow-up-right-from-square text-4xl mb-2 text-white"></i>
+                        </a>
+                      </div>
+                    ))
+                  }
               </div>
             </div>
           </div>

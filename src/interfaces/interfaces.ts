@@ -8,7 +8,13 @@ export interface Project {
   desc: string,
   stack: Array<string>,
   link: string,
-  urls: Array<string>
+  urls: Array<URL>,
+  github: string
+}
+
+export interface URL {
+  title: string,
+  link: string
 }
 
 export interface Data {
