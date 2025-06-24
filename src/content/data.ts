@@ -20,10 +20,10 @@ export const data: Data = {
         ]
       },
       "homeDescription": {
-        "desc": "Entusiasta del software, Actualmente enfocado en el desarrollo Full Stack"
+        "desc": "Apasionado por el desarrollo de software, actualmente enfocado en crear experiencias Full Stack modernas y funcionales"
       },
       "aboutDescription": {
-        "desc": "Estudiante por egresar de la carrera de Ingeniería en Sistemas. Interesado en el desarrollo web, y sistemas más bajo nivel como ser creación de herramientas.",
+        "desc": "Me apasiona el desarrollo de software y las infinitas posibilidades que ofrece para crear soluciones innovadoras desde cualquier lugar. Interesado en el desarrollo web, y sistemas más bajo nivel como ser creación de herramientas.",
         "span": "Tecnologías con las que he trabajado"
       },
       "footerDescription": {
@@ -84,10 +84,10 @@ export const data: Data = {
         ]
       },
         "homeDescription": {
-          "desc": "Software enthusiast, currently focused on Full Stack development."
+          "desc": "Passionate about software development, currently focused on creating modern and functional Full Stack experiences"
         },
         "aboutDescription": {
-          "desc": "Soon-to-be graduate in Systems Engineering. Interested in web development and lower-level systems such as tool creation.",
+          "desc": "I am passionate about software development and the infinite possibilities it offers to create innovative solutions from anywhere. Interested in web development, and lower level systems such as tool creation.",
           "span": "Technologies I have worked with"
         },
         "footerDescription": {

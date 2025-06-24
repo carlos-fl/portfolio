@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../../styles/global.css";
 import { Tag } from "./Tag";
 import type { Project, URL } from "../../interfaces/interfaces";
@@ -12,7 +12,7 @@ export function Carousel({ projects }: { projects: Array<Project> }) {
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % total);
 
   return (
-    <div className="relative sm:w-4/5 w-full mx-auto p-3 rounded-lg overflow-hidden">
+    <div className="relative sm:w-4/5 sm:h-full w-full mx-auto p-3 rounded-lg overflow-hidden">
       <div className="relative h-70 md:h-96">
         {projects.map((project, index) => (
           <div
