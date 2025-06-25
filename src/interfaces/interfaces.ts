@@ -5,6 +5,7 @@ export interface Link {
 
 export interface Project {
   title: string,
+  date: string
   desc: string,
   stack: Array<string>,
   link: string,

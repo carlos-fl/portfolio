@@ -27,7 +27,10 @@ export function Carousel({ projects }: { projects: Array<Project> }) {
               alt={project.title}
             />
             <div className="absolute inset-0 bg-black bg-opacity-60 rounded opacity-0 hover:opacity-90 transition-opacity duration-300 flex flex-col items-center justify-around p-5">
-              <h3 className="text-[var(--title-color)] font-title text-xl">{project.title}</h3>
+              <div className="flex flex-col items-center">
+                <h3 className="text-[var(--title-color)] font-title text-xl">{ project.title }</h3>
+                <h5 className="text-[var(--title-color)] font-title text-xl">{ project.date } </h5>
+              </div>
               <h5 className="text-[var(--span-color)] font-text text-xl font-bold">{project.desc}</h5>
               <div className="grid grid-flow-col grid-rows-2 gap-4">
                 {project.stack.map((tech, i) => (
@@ -36,7 +39,7 @@ export function Carousel({ projects }: { projects: Array<Project> }) {
               </div>
               <div className="flex justify-around w-2/5">
                 <div>
-                  <a href={project.github} target="_blank" key={project.github} rel="noopener noreferrer" title="github">
+                  <a href={project.github} target="_blank" key={ project.github } rel="noopener noreferrer" title="github">
                     <i className="fa-brands fa-github text-[var(--bg-tag)] text-4xl mb-2"></i>
                   </a>
                 </div>
