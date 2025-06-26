@@ -21,6 +21,12 @@ export interface URL {
 export interface Data {
   languages: Languages,
   stack: Stack,
+  highlights: Highlight
+}
+
+export interface Highlight {
+  home: Array<string>,
+  about: Array<string>,
 }
 
 interface Languages {
