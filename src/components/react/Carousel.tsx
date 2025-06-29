@@ -12,8 +12,8 @@ export function Carousel({ projects }: { projects: Array<Project> }) {
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % total);
 
   return (
-    <div className="relative sm:w-4/5 sm:h-full w-full mx-auto p-3 rounded-lg overflow-hidden">
-      <div className="relative h-70 md:h-96">
+    <div className="relative sm:w-4/5 sm:max-w-7xl sm:h-full sm:max-h-7xl w-full mx-auto p-3 rounded-lg overflow-hidden">
+      <div className="relative h-70 md:h-100">
         {projects.map((project, index) => (
           <div
             key={index}
@@ -23,7 +23,7 @@ export function Carousel({ projects }: { projects: Array<Project> }) {
           >
             <img
               src={project.link}
-              className="object-cover w-full h-full rounded-lg"
+              className="object-fill w-full h-full rounded-lg"
               alt={project.title}
             />
             <div className="absolute inset-0 bg-black bg-opacity-60 rounded opacity-0 hover:opacity-90 transition-opacity duration-300 flex flex-col items-center justify-around p-5">
