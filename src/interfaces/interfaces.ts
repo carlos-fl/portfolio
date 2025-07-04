@@ -8,7 +8,7 @@ export interface Project {
   date: string
   desc: string,
   stack: Array<string>,
-  link: string,
+  image: string,
   urls: Array<URL>,
   github: string
 }

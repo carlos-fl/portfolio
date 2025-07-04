@@ -33,11 +33,33 @@ export const data: Data = {
       "projects": 
         [
           {
+            "title": "Arquitectura Escalable para Plataforma de Comercio Electrónico en Azure",
+            "date": "Julio 2025",
+            "desc": "Diseñé e implementé una arquitectura robusta y escalable para una plataforma de comercio electrónico utilizando servicios en la nube de Azure. El sistema soporta altos volúmenes de transacciones, proporciona una experiencia de usuario fluida mediante un portal web centralizado y permite la gestión completa de productos y pedidos a través de un backoffice. Además, incluye capacidades analíticas en tiempo real basadas en los datos de ventas.",
+            "stack": ["Terraform"],
+            "image": "/portfolio-images/ecommerce-terraform.png",
+            "urls": [
+              { 
+                title: "Segundo Repositorio",
+                link: "https://github.com/carlos-fl/ecommerce-experts-etl-repo"
+              },
+              { 
+                title: "Tercer Repositorio",
+                link: "https://github.com/carlos-fl/ecommerce-infra-nginx-erp-db"
+              },
+              { 
+                title: "Diagrama",
+                link: "https://app.diagrams.net/?splash=0#G1xz6bgtVmvRx2ZHQc4uHk-_j3QGtZ91sW#%7B%22pageId%22%3A%223ryXmbK_fZ9IIqpPYdSw%22%7D"
+              }
+            ],
+            "github": "https://github.com/carlos-fl/proyecto_ingenieria"
+          },
+          {
             "title": "Sistema de Registro UNAH",
             "date": "Abril 2025",
             "desc": "Una plataforma web para gestionar procesos académicos y administrativos en la UNAH. Incluye módulos para admisiones, matrícula de estudiantes, acceso a biblioteca y chat interno. Las herramientas para docentes permiten la carga de calificaciones, gestión de recursos del curso y funciones de coordinación. Diseñada para centralizar y optimizar las operaciones universitarias para estudiantes y personal.",
             "stack": ["PHP", "MySQL", "Javascript", "HTML", "CSS", "Bootstrap"],
-            "link": "/portfolio-images/registro.png",
+            "image": "/portfolio-images/registro.png",
             "urls": [],
             "github": "https://github.com/carlos-fl/proyecto_ingenieria"
           },
@@ -46,7 +68,7 @@ export const data: Data = {
             "date": "Diciembre 2024",
             "desc": "Una aplicación web para diseñar y ejecutar procesos ETL (Extracción, Transformación, Carga). Ofrece una interfaz visual para construir flujos de datos sin escribir código. Inspirada en Visual Studio Integration Services, proporciona funcionalidad de arrastrar y soltar. Simplifica tareas de integración de datos para usuarios no técnicos.",
             "stack": ["Javascript", "HTML", "CSS", "Bootstrap", "NodeJS", "Express"], 
-            "link": "/portfolio-images/etl.png",
+            "image": "/portfolio-images/etl.png",
             "urls": [],
             "github": "https://github.com/carlos-fl/ETL-BASES2"
           },
@@ -55,7 +77,7 @@ export const data: Data = {
             "date": "Julio 2024",
             "desc": "Una herramienta de escritorio para gestionar bases de datos a través de una interfaz amigable. Permite asignar roles y permisos, crear bases de datos, tablas y usuarios, así como llenar tablas con datos. Diseñada como una alternativa visual a SQL Workbench, con todas las operaciones realizadas mediante la interfaz gráfica, sin necesidad de comandos.",
             "stack": ["Python", "PyQt5", "SQL Server"],
-            "link": "/portfolio-images/crud-db3.jpeg",
+            "image": "/portfolio-images/crud-db3.jpeg",
             "urls": [], 
             "github": "https://github.com/carlos-fl/CRUD-BDI"
           },
@@ -64,7 +86,7 @@ export const data: Data = {
             "date": "Diciembre 2023",
             "desc": "Una aplicación web Full Stack diseñada para programación en equipo en tiempo real. Ofrece autenticación de usuarios, integración con base de datos y soporte para múltiples lenguajes de programación. Inspirada en plataformas como CodePen, permite la edición colaborativa de código en el navegador. Construida para facilitar el trabajo en equipo y la creación de prototipos.",
             "stack": ["Javascript", "HTML", "CSS", "NodeJS", "MongoDB", "Express"],
-            "link": "/portfolio-images/codeSpace.png",
+            "image": "/portfolio-images/codeSpace.png",
             "urls": [],
             "github": "https://github.com/carlos-fl/CodeSpace-app"
           }
@@ -100,11 +122,33 @@ export const data: Data = {
         },
         "projects": [
           {
+            "title": "Scalable E-commerce Platform Architecture on Azure",
+            "date": "July 2025",
+            "desc": "Designed and implemented a robust and scalable architecture for an e-commerce platform using Azure cloud services. The system is capable of handling high transaction volumes, providing a seamless user experience through a centralized web portal, and offering full back-office support for product and order management. Additionally, the platform includes real-time analytics capabilities based on sales data.",
+            "stack": ["Terraform"],
+            "image": "/portfolio-images/ecommerce-terraform.png",
+            "urls": [
+              { 
+                title: "second repository",
+                link: "https://github.com/carlos-fl/ecommerce-experts-etl-repo"
+              },
+              { 
+                title: "Third repository",
+                link: "https://github.com/carlos-fl/ecommerce-infra-nginx-erp-db"
+              },
+              { 
+                title: "Diagram",
+                link: "https://app.diagrams.net/?splash=0#G1xz6bgtVmvRx2ZHQc4uHk-_j3QGtZ91sW#%7B%22pageId%22%3A%223ryXmbK_fZ9IIqpPYdSw%22%7D"
+              }
+            ],
+            "github": "https://github.com/carlos-fl/proyecto_ingenieria"
+          },
+          {
             "title": "Academic Management System",
             "date": "April 2025",
             "desc": "A web-based platform for managing academic and administrative processes at UNAH. Includes modules for admissions, student enrollment, library access, and internal chat.Faculty tools support grade submission, course resource management, and coordination roles. Designed to centralize and streamline university operations for students and staff.",
             "stack": ["PHP", "MySQL", "Javascript", "HTML", "CSS", "Bootstrap"],
-            "link": "/portfolio-images/registro.png",
+            "image": "/portfolio-images/registro.png",
             "urls": [],
             "github": "https://github.com/carlos-fl/proyecto_ingenieria"
           },
@@ -113,7 +157,7 @@ export const data: Data = {
             "date": "December 2024",
             "desc": "A web application for designing and executing ETL (Extract, Transform, Load) workflows. Provides a visual interface to build data pipelines without writing code. Inspired by Visual Studio Integration Services, offering drag-and-drop functionality. Simplifies data integration tasks for non-technical users.",
             "stack": ["Javascript", "HTML", "CSS", "Bootstrap", "NodeJS", "Express"],
-            "link": "/portfolio-images/etl.png",
+            "image": "/portfolio-images/etl.png",
             "urls": [],
             "github": "https://github.com/carlos-fl/ETL-BASES2"
           },
@@ -122,7 +166,7 @@ export const data: Data = {
             "date": "July 2024",
             "desc": "A desktop tool for managing databases through a user-friendly interface. Allows role and permission assignment, creation of databases, tables, and users, as well as data entry. Designed as a visual alternative to SQL Workbench, with all operations handled via UI—no commands needed.",
             "stack": ["Python", "PyQt5", "SQL Server"],
-            "link": "/portfolio-images/crud-db3.jpeg",
+            "image": "/portfolio-images/crud-db3.jpeg",
             "urls": [],
             "github": "https://github.com/carlos-fl/CRUD-BDI"
           },
@@ -131,7 +175,7 @@ export const data: Data = {
             "date": "December 2023",
             "desc": "A Full Stack web application designed for real-time team coding. Features user authentication, database integration, and support for multiple programming languages. Inspired by platforms like CodePen, enabling collaborative code editing in the browser. Built to streamline team-based coding and prototyping.",
             "stack": ["Javascript", "HTML", "CSS", "NodeJS", "MongoDB", "Express"],
-            "link": "/portfolio-images/codeSpace.png",
+            "image": "/portfolio-images/codeSpace.png",
             "urls": [],
             "github": "https://github.com/carlos-fl/CodeSpace-app"
           }

@@ -22,7 +22,7 @@ export function Carousel({ projects }: { projects: Array<Project> }) {
             }`}
           >
             <img
-              src={project.link}
+              src={project.image}
               className="object-fill w-full h-full rounded-lg"
               alt={project.title}
             />
