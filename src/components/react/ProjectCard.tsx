@@ -1,13 +1,74 @@
+import type React from "react"
 import type { Project, URL } from "../../interfaces/interfaces"
 import "../../styles/global.css"
+import { useState } from "react"
 
 export function ProjectCard({ projects }: { projects: Array<Project> }) {
+  const MAX_WIDTH = 1024
+  const WINDOW_WIDTH: number = window.innerWidth
+
+  const [isFocused, setFocused] = useState(0)
+  const [clickedProject, setProject] = useState<Project | null>(null)
+
+  const showDescription = (e: React.MouseEvent, project: Project | null) => {
+    setFocused(1)
+    setProject(project)
+  }
+  
+  const hideDescription = () => {
+    setFocused(0)
+  }
+
   return (
-    <div>
+    <>
+      <div className={`flex flex-col max-w-7xl justify-between bg-[var(--bg-tag)] mb-2 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 ${isFocused ? "block" : "hidden"}`}>
+
+        <div className="relative">
+          <img className="rounded-t-lg object-fill h-80 w-full" src={ clickedProject?.image } alt={ clickedProject?.title } />
+          <div onClick={ hideDescription } className="absolute right-5 top-2">
+            <i className="fa-solid fa-circle-xmark text-[var(--title-color)] text-2xl"></i>
+          </div>
+        </div>
+
+        
+
+        <div className="p-5">
+            <h5 className="mb-2 text-2xl font-bold font-text text-[var(--title-color)]">{ clickedProject?.title }</h5>
+            <h6 className="mb-2 text-2xl font-bold font-text text-[var(--span-color)]">{ clickedProject?.desc }</h6>
+            <div className="flex justify-start flex-wrap max-w-full">
+              <h6 className="text-sm text-[var(--text-color)]">
+                {
+                  clickedProject?.stack.join(' ')
+                }
+              </h6>
+            </div>
+            <div className="flex justify-start">
+              <div className="mr-2">
+                <a href={ clickedProject?.github } target="_blank" title="github">
+                  <i className="fa-brands fa-github text-[var(--bg-tag)] text-xl mt-2"></i>
+                </a>
+              </div>
+              {
+                clickedProject?.urls.map((url: URL, i: number) => (
+                  <div key={ i } className="mr-2">
+                    <a href={ url.link } target="_blank" title={ url.title }>
+                      <i className="fa-solid fa-arrow-up-right-from-square text-xl text-[var(--bg-tag)] mt-2"></i>
+                    </a>
+                  </div>
+                ))
+              }
+            </div>  
+        </div>
+      </div>
+    <div className={`sm:grid sm:grid-flow-col sm:grid-rows-3 sm:gap-4 sm:justify-items-center`}>
+      
       {
+        !isFocused &&
         projects.map((project: Project) => (
-          <div className="w-full bg-[var(--bg-tag)] mb-2 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-              <img className="rounded-t-lg" src={ project.image } alt={ project.title } />
+          <div onClick={ (event) => { WINDOW_WIDTH >= MAX_WIDTH && showDescription(event, project) } } className="flex flex-col justify-between sm:w-4/5 h-auto w-full cursor-zoom-in hover:scale-105 transition-transform duration-300 bg-[var(--bg-tag)] mb-2 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div className="w-full h-3/5">
+              <img className="rounded-t-lg w-full h-full object-fill" src={ project.image } alt={ project.title } />
+            </div>
               <div className="p-5">
                   <h5 className="mb-2 text-2xl font-bold font-text text-[var(--text-color)] dark:text-white">{ project.title }</h5>
                   <div className="flex justify-start flex-wrap max-w-full">
@@ -38,5 +99,6 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
         ))
       }
     </div>
+  </>
   )
 }
