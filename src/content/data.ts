@@ -183,10 +183,10 @@ export const data: Data = {
       }
     },
   "stack": {
-      "db": ["MongoDB", "MySQL", "Oracle", "SQL Server"],
-      "languages": ["Javascript", "PHP", "Python", "Java", "C++"],
-      "tech": ["HTML", "CSS", "Typescript", "NodeJS", "Express", "Figma", "Cisco PKT"],
-      "frameworks": ["VueJS", "Laravel", "Spring Boot"]
+      "db": [{ name: "MongoDB", icon: "/icons/mongo.svg" }, { name: "MySQL", icon: "/icons/mysql.svg" }, { name: "Oracle", icon: "/icons/oracle.svg" }],
+      "languages": [{ name: "Javascript", icon: "/icons/javascript.svg" }, { name: "PHP", icon: "/icons/php.svg" }, { name: "Python", icon: "/icons/python.svg" }, { name: "Java", icon: "/icons/java.svg" }, { name: "C++", icon: "/icons/cplusplus-original.svg" }],
+      "tech": [{ name: "HTML", icon: "/icons/html5.svg" }, { name: "CSS", icon: "/icons/css3.svg" }, { name: "Typescript", icon: "/icons/typescript-original.svg" }, { name: "NodeJS", icon: "/icons/Node.js.svg" }, { name: "Express", icon: "/icons/Express.svg" }, { name: "Figma", icon: "/icons/Figma.svg" }],
+      "frameworks": [{ name: "VueJS", icon: "/icons/Vue.js.svg" }, { name: "Laravel", icon: "/icons/Laravel.svg" }, { name: "Spring Boot", icon: "/icons/Spring.svg" }]
     },
   "highlights": {
     "home": [

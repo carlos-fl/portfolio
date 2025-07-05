@@ -24,9 +24,9 @@ export function TabSwitcher({ tabs }: { tabs: Array<string> }) {
       ))
       }
       </div>
-      <div className="grid grid-flow-col grid-rows-3 gap-4">
-      {stack.map((tech) => (
-        <Tech techName={ tech } key={ tech } />
+      <div className="grid grid-flow-row sm:grid-rows-2 sm:grid-cols-4 grid-cols-2 mb-2 gap-4 items-center mt-5">
+      {stack.map((tech, index) => (
+        <Tech tech={ tech } key={ index } />
       ))
        }
       </div>

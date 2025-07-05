@@ -24,7 +24,7 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
       <div className={`flex flex-col max-w-7xl justify-between bg-[var(--bg-tag)] mb-2 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 ${isFocused ? "block" : "hidden"}`}>
 
         <div className="relative">
-          <img className="rounded-t-lg object-fill h-80 w-full" src={ clickedProject?.image } alt={ clickedProject?.title } />
+          <img className="rounded-t-lg object-fill h-100 w-full" src={ clickedProject?.image } alt={ clickedProject?.title } />
           <div onClick={ hideDescription } className="absolute right-5 top-2">
             <i className="fa-solid fa-circle-xmark text-[var(--title-color)] text-2xl"></i>
           </div>

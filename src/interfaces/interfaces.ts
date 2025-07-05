@@ -35,10 +35,15 @@ interface Languages {
 }
 
 export interface Stack {
-  db: Array<string>,
-  languages: Array<string>,
-  tech: Array<string>,
-  frameworks: Array<string>
+  db: Array<Tech>,
+  languages: Array<Tech>,
+  tech: Array<Tech>,
+  frameworks: Array<Tech>
+}
+
+export interface Tech {
+  name: string,
+  icon: string
 }
 
 interface LanguageData {

@@ -14,8 +14,7 @@ import Description from "../../components/Description.astro";
 import Layout from '../../layouts/Layout.astro';
 import { TabSwitcher } from "../../components/react/TabSwitcher";
 import { data } from "../../content/data";
-import { Projects } from "../../components/react/Projects"
-import type { Link, Project, Stack } from "../../interfaces/interfaces";
+import type { Link, Project, Stack, Tech } from "../../interfaces/interfaces";
 import { ProjectCard } from "../../components/react/ProjectCard";
 
 interface Props {
@@ -35,7 +34,7 @@ const techologiesSpan: string | undefined = data.languages[key].aboutDescription
 const footerDescription: string = data.languages[key].footerDescription.desc
 const footerSpan: string | undefined = data.languages[key].footerDescription.span
 
-const stack: Array<string> = (Object.keys(data.stack) as Array<keyof Stack>).flatMap((key) => [...data.stack[key]]) 
+const stack: Array<string> = (Object.keys(data.stack) as Array<keyof Stack>).flatMap((key) => [...data.stack[key]].flatMap((tech) => tech.name)) 
 const stackTabs: Array<string> = Object.keys(data.stack)
 
 const projects: Array<Project> = data.languages[key].projects
@@ -62,7 +61,7 @@ const projects: Array<Project> = data.languages[key].projects
       </section>
     </div>
 
-    <div class="sm:h-[var(--h-section)] max-w-full sm:mb-20">
+    <div class="sm:h-auto max-w-full">
       <section id="about">
         <div>
           <Section sectionName={ aboutSection } />
@@ -81,7 +80,7 @@ const projects: Array<Project> = data.languages[key].projects
       </section>
     </div>
 
-    <div class="h-auto max-w-full mb-10 mt-5 sm:py-20">
+    <div class="h-auto max-w-full mb-10 mt-5">
       <section id="projects">
         <div class="flex justify-start">
           <Section sectionName={ projectsSection } />
