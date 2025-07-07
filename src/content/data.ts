@@ -20,10 +20,10 @@ export const data: Data = {
         ]
       },
       "homeDescription": {
-        "desc": "Apasionado por el desarrollo de software, me especializo en crear soluciones Full Stack modernas y funcionales que resuelven necesidades reales de negocio. Desde la comprensión de requerimientos hasta la optimización de procesos mediante tecnología, diseño sistemas que mejoran la eficiencia operativa, permiten una mejor toma de decisiones y conectan datos de forma inteligente entre distintas plataformas"
+        "desc": "Desarrollador de Software"
       },
       "aboutDescription": {
-        "desc": "Me apasiona el desarrollo de software y las infinitas posibilidades que ofrece para crear soluciones innovadoras. Me especializo en desarrollo web, y también me interesa trabajar en sistemas de más bajo nivel, como la creación de herramientas personalizadas, automatización de procesos o utilidades que optimicen el rendimiento y la productividad.",
+        "desc": "Apasionado por el desarrollo de software, me especializo en crear soluciones Full Stack modernas y funcionales que resuelven necesidades reales de negocio. Desde la comprensión de requerimientos hasta la optimización de procesos mediante tecnología, diseño sistemas que mejoran la eficiencia operativa, permiten una mejor toma de decisiones y conectan datos de forma inteligente entre distintas plataformas",
         "span": "Tecnologías con las que he trabajado"
       },
       "footerDescription": {
@@ -110,10 +110,10 @@ export const data: Data = {
         ]
       },
         "homeDescription": {
-          "desc": "Passionate about software development, I specialize in building modern and functional Full Stack solutions that address real business needs. From understanding client requirements to optimizing operations through technology, I design systems that enhance efficiency, enable better decision-making, and seamlessly connect data across different platforms"
+          "desc": "Software Developer"
         },
         "aboutDescription": {
-          "desc": "I'm passionate about software development and the endless possibilities it offers to create innovative solutions. I specialize in web development and also have a strong interest in lower-level systems, such as building custom tools, automating processes, and developing utilities that improve performance and productivity.",
+          "desc": "Passionate about software development, I specialize in building modern and functional Full Stack solutions that address real business needs. From understanding client requirements to optimizing operations through technology, I design systems that enhance efficiency, enable better decision-making, and seamlessly connect data across different platforms.",
           "span": "Technologies I have worked with"
         },
         "footerDescription": {
@@ -228,7 +228,25 @@ export const data: Data = {
   "web development",
   "automating processes",
   "performance",
-  "productivity"
+  "productivity",
+  "Full Stack",
+  "desarrollo de software",
+  "necesidades",
+  "negocio",
+  "tecnología",
+  "eficiencia operativa",
+  "mejor",
+  "decisiones",
+  "software development",
+  "Full Stack",
+  "software development",
+  "needs",
+  "business",
+  "technology",
+  "optimizing operations",
+  "better",
+  "decisions",
+  "software development"
 ]
 
   }
