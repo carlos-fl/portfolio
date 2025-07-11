@@ -65,7 +65,7 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
       {
         !isFocused &&
         projects.map((project: Project) => (
-          <div onClick={ (event) => { WINDOW_WIDTH >= MAX_WIDTH && showDescription(event, project) } } className="flex flex-col justify-between sm:w-4/5 h-auto w-full cursor-zoom-in hover:scale-105 transition-transform duration-300 bg-[var(--bg-tag)] mb-2 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+          <div onClick={ (event) => { WINDOW_WIDTH >= MAX_WIDTH && showDescription(event, project) } } className="flex flex-col justify-between sm:w-4/5 h-auto w-full cursor-zoom-in hover:scale-105 transition-transform duration-300 bg-[var(--card-color)] mb-2 rounded-lg shadow-sm">
             <div className="w-full h-3/5">
               <img className="rounded-t-lg w-full h-full object-fill" src={ project.image } alt={ project.title } />
             </div>
