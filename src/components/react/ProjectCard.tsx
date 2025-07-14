@@ -10,9 +10,15 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
   const [isFocused, setFocused] = useState(0)
   const [clickedProject, setProject] = useState<Project | null>(null)
 
-  const showDescription = (e: React.MouseEvent, project: Project | null) => {
+  const showDescription = (e: any, project: Project | null) => {
     setFocused(1)
     setProject(project)
+
+    setTimeout(() => {
+      const div = document.getElementById('projects')
+      if (div)
+        div.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 100)
   }
   
   const hideDescription = () => {
