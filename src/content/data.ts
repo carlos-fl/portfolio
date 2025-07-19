@@ -33,6 +33,15 @@ export const data: Data = {
       "projects": 
         [
           {
+            title: "API REST con FastAPI, Redis y Despliegue en Azure",
+            date: "Julio 2025",
+            desc: "API REST de alto rendimiento desarrollada con FastAPI, diseñada para manejar solicitudes de forma eficiente gracias a su naturaleza asíncrona. Se integró Redis como sistema de almacenamiento en memoria para mejorar los tiempos de respuesta, permitir el uso de caché y gestionar datos en tiempo real de forma más eficaz. La API incluye funciones como autenticación, manejo de errores y documentación automática con OpenAPI. Todo el sistema fue desplegado en Microsoft Azure utilizando servicios como Azure App Service y Azure Container Registry, garantizando escalabilidad, fiabilidad y disponibilidad continua. Este proyecto demuestra habilidades en desarrollo backend, despliegue en la nube y optimización de sistemas.",
+            stack: ["FastAPI", "Redis", "SQL Server", "Azure", "Docker", "Firebase"],
+            image: "/portfolio-images/redis.jpeg",
+            urls: [{ title: "Recursos de terraform" , link: "https://github.com/carlos-fl/redis-terraform-resources" }],
+            github: "https://github.com/carlos-fl/api-with-redis"
+          },
+          {
             "title": "Arquitectura Escalable para Plataforma de Comercio Electrónico en Azure",
             "date": "Julio 2025",
             "desc": "Diseñé e implementé una arquitectura robusta y escalable para una plataforma de comercio electrónico utilizando servicios en la nube de Azure. El sistema soporta altos volúmenes de transacciones, proporciona una experiencia de usuario fluida mediante un portal web centralizado y permite la gestión completa de productos y pedidos a través de un backoffice. Además, incluye capacidades analíticas en tiempo real basadas en los datos de ventas.",
@@ -121,6 +130,15 @@ export const data: Data = {
           "span": "All rights reserved"
         },
         "projects": [
+          {
+            title: "REST API with FastAPI, Redis, and Azure Deployment",
+            date: "July 2025",
+            desc: "high-performance RESTful API built using FastAPI, designed to handle requests efficiently with asynchronous capabilities. Redis was integrated as an in-memory data store to enhance response times, enable caching, and manage real-time data more effectively. The API includes features like authentication, error handling, and automatic documentation via OpenAPI. The entire system was deployed on Microsoft Azure using services such as Azure App Service and Azure Container Registry, ensuring scalability, reliability, and continuous availability. This project showcases skills in backend development, cloud deployment, and system optimization.",
+            stack: ["FastAPI", "Redis", "SQL Server", "Azure", "Docker", "Firebase"],
+            image: "/portfolio-images/redis.jpeg",
+            urls: [{ title: "terraform resources" , link: "https://github.com/carlos-fl/redis-terraform-resources" }],
+            github: "https://github.com/carlos-fl/api-with-redis"
+          },
           {
             "title": "Scalable E-commerce Platform Architecture on Azure",
             "date": "July 2025",

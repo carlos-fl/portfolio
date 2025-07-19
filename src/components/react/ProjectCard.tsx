@@ -39,7 +39,10 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
         
 
         <div className="p-5">
-            <h5 className="mb-2 text-2xl font-bold font-text text-[var(--title-color)]">{ clickedProject?.title }</h5>
+          <div>
+            <h5 className="mb-2 text-2xl font-bold font-text dark:text-white">{ clickedProject?.title }</h5>
+            <h5 className="mb-2 text-2xl font-bold font-text dark:text-slate-300">{ clickedProject?.date }</h5>
+          </div>
             <h6 className="mb-2 text-2xl font-bold font-text text-[var(--span-color)]">{ clickedProject?.desc }</h6>
             <div className="flex justify-start flex-wrap max-w-full">
               <h6 className="text-sm text-[var(--text-color)]">
@@ -66,7 +69,7 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
             </div>  
         </div>
       </div>
-    <div className={`sm:grid sm:grid-flow-col sm:grid-rows-3 sm:gap-4 sm:justify-items-center`}>
+    <div className={`sm:grid sm:grid-flow-row sm:grid-cols-2 sm:gap-4 sm:justify-items-center`}>
       
       {
         !isFocused &&
@@ -76,7 +79,10 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
               <img className="rounded-t-lg w-full h-full object-fill" src={ project.image } alt={ project.title } />
             </div>
               <div className="p-5">
+                <div>
                   <h5 className="mb-2 text-2xl font-bold font-text text-[var(--text-color)] dark:text-white">{ project.title }</h5>
+                  <h5 className="mb-2 text-2xl font-bold font-text text-[var(--title-color)] dark:text-slate-300">{ project?.date }</h5>
+                </div>
                   <div className="flex justify-start flex-wrap max-w-full">
                     <h6 className="text-sm text-[var(--span-color)]">
                       {
