@@ -1,0 +1,45 @@
+---
+import "../../styles/projects.css"
+import "../../styles/global.css"
+import Navbar from "../../components/Navbar.astro";
+import { data } from "../../content/data";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import type { Link } from "../../interfaces/interfaces";
+
+const links: Link[] = data.languages.spanish.navbar.links
+
+type Project = CollectionEntry<'projects'> & {
+    render: () => Promise<{Content: any}>
+};
+
+
+export async function getStaticPaths() {
+  const entries = await getCollection('projects');
+  return entries.map(entry => ({
+    params: { project: entry.slug },
+    props: { entry }
+  }));
+}
+
+interface Props{
+    entry: Project
+}
+
+const {entry} = Astro.props;
+const {Content} = await entry.render();
+
+---
+
+<Layout>
+  <div class="sm:mt-20">
+    <Navbar links={links} />
+    <h1 class="text-4xl font-bold text-span mb-4">{entry.data.title}</h1>
+    <article class="text-primary-white">
+      <Content />
+    </article>
+    <div class="w-3/5 mx-auto mb-10">
+      <img src={entry.data.img} alt="project image" class="rounded-t-lg">
+    </div>
+  </div>
+</Layout>

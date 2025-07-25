@@ -1,4 +1,3 @@
-import type React from "react"
 import type { Project, URL } from "../../interfaces/interfaces"
 import "../../styles/global.css"
 import { useState } from "react"
@@ -6,6 +5,7 @@ import { useState } from "react"
 export function ProjectCard({ projects }: { projects: Array<Project> }) {
   const MAX_WIDTH = 1024
   const WINDOW_WIDTH: number = window.innerWidth
+  const projectLinkNameDetail = window.location.pathname.includes('es') ? "Ver más" : "See more"
 
   const [isFocused, setFocused] = useState(0)
   const [clickedProject, setProject] = useState<Project | null>(null)
@@ -30,7 +30,9 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
       <div className={`flex flex-col max-w-7xl justify-between bg-[var(--bg-tag)] mb-2 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 ${isFocused ? "block" : "hidden"}`}>
 
         <div className="relative">
-          <img className="rounded-t-lg object-fill h-100 w-full" src={ clickedProject?.image } alt={ clickedProject?.title } />
+          <div className="w-full bg-white rounded-t-lg">
+            <img className="rounded-t-lg object-contain h-100 w-full" src={ clickedProject?.image } alt={ clickedProject?.title } />
+          </div>
           <div onClick={ hideDescription } className="absolute right-5 top-2">
             <i className="fa-solid fa-circle-xmark text-[var(--title-color)] text-2xl"></i>
           </div>
@@ -57,15 +59,25 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
                   <i className="fa-brands fa-github text-[var(--bg-tag)] text-xl mt-2"></i>
                 </a>
               </div>
-              {
-                clickedProject?.urls.map((url: URL, i: number) => (
-                  <div key={ i } className="mr-2">
-                    <a href={ url.link } target="_blank" title={ url.title }>
-                      <i className="fa-solid fa-arrow-up-right-from-square text-xl text-[var(--bg-tag)] mt-2"></i>
-                    </a>
-                  </div>
-                ))
-              }
+              <div className="flex justify-between w-full">
+                <div className="flex">
+                  {
+                    clickedProject?.urls.map((url: URL, i: number) => (
+                      <div key={ i } className="mr-2">
+                        <a href={ url.link } target="_blank" title={ url.title }>
+                          <i className="fa-solid fa-arrow-up-right-from-square text-xl text-[var(--bg-tag)] mt-2"></i>
+                        </a>
+                      </div>
+                    ))
+                  }
+                </div>
+                <div>
+                  {
+                    clickedProject?.detailURL &&
+                    <a href={clickedProject?.detailURL} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{ projectLinkNameDetail }</a>
+                  }
+                </div>
+              </div>
             </div>  
         </div>
       </div>

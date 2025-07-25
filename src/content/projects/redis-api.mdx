@@ -1,0 +1,73 @@
+---
+title: "Implementación de una REST API con FastAPI y Azure" 
+img: "/portfolio-images/redis_api.svg"
+---
+
+## 🎯 Objetivo del Proyecto
+
+Desarrollar una REST API robusta utilizando **FastAPI**, integrando distintos servicios de **Azure** para la ingesta, procesamiento, almacenamiento, cacheo y monitoreo de datos, así como autenticación segura con **Firebase** y **JWT**.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+- **FastAPI** (Python)
+- **Azure Data Factory** (ETL)
+- **Azure SQL Database**
+- **Firebase Authentication**
+- **JWT (JSON Web Tokens)**
+- **Azure Redis Cache**
+- **Azure Application Insights**
+
+---
+
+## 🔄 Proceso ETL con Azure Data Factory
+
+Se diseñó un flujo **ETL simplificado** mediante **Azure Data Factory** para la ingesta de información desde un archivo `.csv` con datos sobre prendas de ropa. Este proceso incluyó:
+
+- Creación de **datasets** (origen: blob storage, destino: Azure SQL Database).
+- Diseño de un **pipeline** sencillo para automatizar la carga de datos.
+
+Aunque no es un ETL completo, se aplicaron componentes clave del proceso para habilitar la carga de datos de forma escalable y controlada.
+
+---
+
+## 🚀 Desarrollo de la REST API con FastAPI
+
+La API fue desarrollada utilizando **FastAPI** por su rapidez y soporte nativo para documentación con **OpenAPI**.
+
+- Se estructuraron endpoints RESTful para acceder a los datos almacenados en la base de datos.
+- La lógica de negocio se encapsuló en controladores y servicios reutilizables.
+- Se agregaron middlewares para logging y control de errores.
+
+---
+
+## 🔐 Autenticación con Firebase y JWT
+
+Para asegurar los endpoints:
+
+- Se implementó **Firebase Authentication** para la gestión de usuarios.
+- Se utilizó **JWT** para verificar la identidad del usuario en endpoints protegidos.
+- Los tokens se validan en cada petición entrante, asegurando que solo usuarios autenticados accedan a información sensible.
+
+---
+
+## ⚡ Optimización con Azure Redis Cache
+
+Para mejorar la latencia en respuestas de datos recurrentes:
+
+- Se integró **Azure Redis Cache** como capa de caché.
+- Los endpoints que consultan datos repetitivos almacenan y recuperan la información desde Redis si ya ha sido solicitada anteriormente.
+- Esto redujo significativamente los tiempos de respuesta y la carga en la base de datos.
+
+---
+
+## 📊 Monitoreo con Azure Application Insights
+
+Se configuró **Azure Application Insights** para observar el comportamiento y desempeño de la API:
+
+- Métricas de tiempo de respuesta y uso de endpoints.
+- Seguimiento de errores y excepciones.
+- Dashboards en tiempo real para análisis de rendimiento.
+
+Esto permitió validar la estabilidad de la aplicación bajo diferentes condiciones de carga y obtener insights útiles para futuras optimizaciones.
