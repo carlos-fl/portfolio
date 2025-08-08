@@ -81,15 +81,17 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
             </div>  
         </div>
       </div>
-    <div className={`sm:grid sm:grid-flow-row sm:grid-cols-2 sm:gap-4 sm:justify-items-center`}>
+
+    <div className={`xl:grid xl:grid-flow-row xl:grid-cols-2 xl:gap-4 xl:justify-items-center xl:p-5`}>
       
       {
         !isFocused &&
         projects.map((project: Project) => (
-          <div onClick={ (event) => { WINDOW_WIDTH >= MAX_WIDTH && showDescription(event, project) } } className="flex flex-col justify-between sm:w-4/5 h-auto w-full cursor-zoom-in hover:scale-105 transition-transform duration-300 bg-[var(--card-color)] mb-2 rounded-lg shadow-sm">
-            <div className="w-full h-3/5">
-              <img className="rounded-t-lg w-full h-full object-fill" src={ project.image } alt={ project.title } />
+          <div onClick={ (event) => { WINDOW_WIDTH >= MAX_WIDTH && showDescription(event, project) } } className="flex flex-col w-md h-auto cursor-zoom-in hover:scale-105 transition-transform duration-300 bg-[var(--card-color)] mb-2 mx-3 rounded-lg shadow-sm">
+            <div className="flex flex-col justify-start rounded-t-lg h-64 overflow-hidden">
+              <img className="object-contain w-full h-auto" src={ project.image } alt={ project.title } />
             </div>
+
               <div className="p-5">
                 <div>
                   <h5 className="mb-2 text-2xl font-bold font-text text-[var(--text-color)] dark:text-white">{ project.title }</h5>

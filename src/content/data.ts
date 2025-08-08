@@ -33,6 +33,21 @@ export const data: Data = {
       "projects": 
         [
           {
+            title: "Generador de reportes",
+            detailURL: "/projects/pokeapi",
+            date: "Agosto 2025",
+            desc: "Sistema avanzado para la generación y gestión de reportes de Pokémon basado en datos obtenidos de la PokeAPI. La aplicación permite crear reportes enriquecidos con estadísticas base y habilidades, aplicar muestreos aleatorios y eliminar reportes de forma definitiva tanto en base de datos como en almacenamiento en la nube. El frontend fue desarrollado en Next.js con una interfaz intuitiva, el backend en FastAPI gestionando la lógica de negocio y las integraciones, y el procesamiento asíncrono en Azure Functions con Python. Se utilizaron Azure SQL Database y Azure Blob Storage para persistencia y almacenamiento de archivos, respectivamente, con infraestructura desplegada mediante Terraform. Este proyecto destaca por su arquitectura modular, manejo eficiente de datos y uso de servicios en la nube para lograr escalabilidad y robustez.",
+            stack: ["Next.js", "FastAPI", "Azure Functions", "Azure SQL", "Blob Storage", "Terraform", "PokeAPI"],
+            image: "/portfolio-images/pokeapi.png",
+            urls: [
+              { title:"Terraform/infra", link: "https://github.com/carlos-fl/terraform-pokeapi" },
+              { title:"UI", link: "https://github.com/carlos-fl/pokeapi-ui" }, 
+              { title:"segundo plano python", link: "https://github.com/carlos-fl/pokeapi-function" }, 
+              { title:"scripts", link: "https://github.com/carlos-fl/pokeapi-scripts" }, 
+            ],
+            github: "https://github.com/carlos-fl/pokeapi-api"
+          },
+          {
             title: "API REST con FastAPI, Redis y Despliegue en Azure",
             detailURL: "/projects/redis-api",
             date: "Julio 2025",
@@ -136,6 +151,20 @@ export const data: Data = {
           "span": "All rights reserved"
         },
         "projects": [
+          {
+            title: "Report Generator",
+            date: "August 2025",
+            desc: "Advanced system for generating and managing Pokémon reports based on data retrieved from the PokeAPI. The application allows creating enriched reports with base stats and abilities, applying random sampling, and permanently deleting reports from both the database and cloud storage. The frontend was built with Next.js featuring an intuitive interface, the backend with FastAPI handling business logic and integrations, and asynchronous processing in Azure Functions with Python. Azure SQL Database and Azure Blob Storage were used for persistence and file storage, respectively, with infrastructure deployed via Terraform. This project stands out for its modular architecture, efficient data handling, and use of cloud services to achieve scalability and robustness.",
+            stack: ["Next.js", "FastAPI", "Azure Functions", "Azure SQL", "Blob Storage", "Terraform", "PokeAPI"],
+            image: "/portfolio-images/pokeapi.png",
+            urls: [
+              { title:"Terraform/infra", link: "https://github.com/carlos-fl/terraform-pokeapi" },
+              { title:"UI", link: "https://github.com/carlos-fl/pokeapi-ui" }, 
+              { title:"worker function", link: "https://github.com/carlos-fl/pokeapi-function" }, 
+              { title:"scripts", link: "https://github.com/carlos-fl/pokeapi-scripts" }, 
+            ],
+            github: "https://github.com/carlos-fl/pokeapi-api"
+          },
           {
             title: "REST API with FastAPI, Redis, and Azure Deployment",
             date: "July 2025",

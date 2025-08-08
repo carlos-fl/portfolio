@@ -34,12 +34,12 @@ const {Content} = await entry.render();
 <Layout>
   <div class="sm:mt-20">
     <Navbar links={links} />
-    <h1 class="text-4xl font-bold text-span mb-4">{entry.data.title}</h1>
-    <article class="text-primary-white">
-      <Content />
-    </article>
-    <div class="w-3/5 mx-auto mb-10">
+    <div>
+      <h1 class="text-4xl font-bold text-span mb-4">{entry.data.title}</h1>
       <img src={entry.data.img} alt="project image" class="rounded-t-lg">
     </div>
+    <article class="text-primary-white mb-5">
+      <Content />
+    </article>
   </div>
 </Layout>

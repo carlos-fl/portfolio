@@ -1,0 +1,162 @@
+---
+title: "Generador de reportes utilizando recursos de Azure" 
+img: "/portfolio-images/pokeapi.png"
+---
+**Fecha**: Agosto-2025  
+**Descripción**: Implementación de nuevas funcionalidades para el generador de reportes de Pokémon  
+**Tecnologías**: Next.js, FastAPI, Azure Functions, Azure SQL, Blob Storage, Terraform  
+
+---
+
+## Descripción del Proyecto
+
+El Generador de Reportes es una aplicación que permite crear reportes en formato CSV con información detallada de Pokémon basados en su tipo. El sistema fue mejorado con tres funcionalidades clave: 
+- *eliminación completa de reportes* 
+- *enriquecimiento de datos*
+- *muestreo aleatorio*.
+
+**Propósito**: Automatizar la generación de reportes personalizables con estadísticas detalladas de Pokémon, optimizando el almacenamiento y procesamiento en la nube.
+
+---
+
+## Arquitectura
+
+El sistema sigue una arquitectura serverless con los siguientes componentes:
+
+### 1. **Repositorios y Contenedores**
+- **ACR (Azure Container Registry)**: Almacena las imágenes de contenedor utilizadas para desplegar los servicios.
+- **API Repository**: Contiene el código fuente y configuración de la API en Python.
+- **UI Repository**: Contiene el código fuente y configuración de la interfaz desarrollada en Next.js.
+
+---
+
+### 2. **Capa de Aplicación**
+- **API Webapp (Python)**: Exposición de endpoints que interactúan con la base de datos y otros servicios.
+- **UI Webapp (Next.js)**: Interfaz interactiva para los usuarios finales, conectada a la API.
+
+---
+
+### 3. **Base de Datos**
+- **DB Server**: Servidor de bases de datos SQL en Azure.
+- **PokeDB**: Base de datos que almacena información procesada o cacheada de la PokeAPI, así como datos propios de la aplicación.
+
+---
+
+### 4. **Almacenamiento en la Nube**
+- **Storage Account**: Proporciona almacenamiento centralizado.
+  - **Blob Storage**: Guarda archivos estáticos, imágenes y otros recursos binarios.
+  - **Queue Storage**: Sistema de colas para manejar tareas asíncronas y mensajería interna.
+
+---
+
+### 5. **Funciones Serverless**
+- **Function App**: Procesa eventos y tareas específicas de forma escalable y bajo demanda.  
+  Conectada tanto al **Queue Storage** como a la **PokeAPI** para procesar información y actualizar datos en el sistema.
+
+---
+
+### 6. **Servicio Externo**
+- **PokeAPI**: API pública de donde se obtiene la información base de Pokémon.  
+  La aplicación integra y procesa estos datos para mostrarlos de forma personalizada.
+
+---
+
+
+
+## Tecnologías Clave
+
+**Frontend** (Next.js): Interfaz de usuario para solicitar reportes, Visualización de reportes generados, Funcionalidad de eliminación
+
+**Backend** (FastAPI): API REST para gestión de reportes, Comunicación con base de datos, Blob Storage y Worker
+
+**Worker** (Azure Function): Procesamiento asíncrono Consulta a PokeAPI Generación de CSV con Pandas
+
+**Almacenamiento**: Azure SQL Database (metadatos), Blob Storage (archivos CSV)
+
+**Infraestructura**: Terraform para provisioning
+
+---
+
+---
+## Funcionalidades Implementadas
+
+### Tarea 1: Eliminación Completa de Reportes (25pts)
+
+**Implementación**:
+
+**Frontend**:
+- Botón de eliminación con modal de confirmación 
+- Actualización dinámica de la lista tras eliminación (renderización nueva)
+
+**Backend**:
+- Nuevo endpoint `DELETE /api/report/{id}`
+- Eliminación de csv en Blob Storage y su registro en la base de datos SQL Server
+
+### Tarea 2: Enriquecimiento de csv
+
+**Implementación**:
+
+**Worker Azure Function**:
+- Se agregaron los siguientes campos al CSV: *experience, height, weight, type, img_url, abilities*
+        ```python
+          
+          pokemon['pokemon']['experience'] = pokemon_data['base_experience']
+          pokemon['pokemon']['height'] = pokemon_data['height']
+          pokemon['pokemon']['weight'] = pokemon_data['weight']
+          pokemon['pokemon']['type'] = data.get('name')
+          pokemon['pokemon']['img_url'] = pokemon_data['sprites']['front_default']
+          abilities = ''
+          for abilitie in pokemon_data['abilities']:
+              abilities += f'{abilitie['ability']['name']},' 
+          pokemon['pokemon']['abilities'] = abilities[:-1]
+          
+
+        ```
+
+### Tarea 3: Muestreo
+
+**Implementación**:
+
+**Frontend**:
+- Se agregó input para agregar un *sample_size*
+- Validación que *sample_size* sea positivo
+
+**Backend**:
+- Se modificó el modelo *PokemonRequest* para aceptar el campo *sample_size*
+- Recibe el campo *sample_size* en el objeto request
+- Valida el campo *sample_size*
+- Envía a la Queue el *sample_size* junto con el *id*
+
+**Base de datos**:
+- Se agregó el campo *sample_size* a la tabla *requests*
+- Se modificó el procedimiento almacenado **create_poke_request* para que acepte el campo *sample_size* y lo retorne con el *id*
+
+**Worker Azure Function**:
+- Recupera el campo *sample_size* de la Azure Queue
+- Valida si *sample_size* es menor al tamaño de lista de pokemons
+- Implementa random.sample para el muestreo
+
+---
+
+## Desafíos
+
+**Investigación**:
+    - Tuve que realizar la investigación sobre cómo se realiza la eliminación de un recurso en el *Blob Storage*, el cual aunque es solamente una sola función requiere de investigación.
+    
+**Navegación en repositorio existente**:
+    - Deber aprender sobre los repositorios base para poder modificarlos es un gran reto con grandes recompensas. Practiqué mis capacidades para poder navegar y modificar código existente, sumamente importante no solamente para el proyecto pero para la vida laboral en general.
+    - De igual forma, como ya existía un repositorio base, la configuración para levantar el proyecto sin errores conllevó bastante tiempo, incluso más que de desarrollo (o al menos fue mayor el estrés para levantar el proyecto 😅).
+
+
+
+---
+
+## Enlaces
+
+- [Terraform/infra](https://github.com/carlos-fl/terraform-pokeapi)
+- [UI/Frontend](https://github.com/carlos-fl/pokeapi-ui)
+- [Worker Function Python](https://github.com/carlos-fl/pokeapi-function)
+- [Scripts](https://github.com/carlos-fl/pokeapi-scripts)
+- [pokeapi-api](https://github.com/carlos-fl/pokeapi-api)
+
+--- 
