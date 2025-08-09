@@ -38,26 +38,23 @@ El sistema sigue una arquitectura serverless con los siguientes componentes:
 
 ### 3. **Base de Datos**
 - **DB Server**: Servidor de bases de datos SQL en Azure.
-- **PokeDB**: Base de datos que almacena información procesada o cacheada de la PokeAPI, así como datos propios de la aplicación.
 
 ---
 
 ### 4. **Almacenamiento en la Nube**
 - **Storage Account**: Proporciona almacenamiento centralizado.
-  - **Blob Storage**: Guarda archivos estáticos, imágenes y otros recursos binarios.
+  - **Blob Storage**: Guarda archivos CSV.
   - **Queue Storage**: Sistema de colas para manejar tareas asíncronas y mensajería interna.
 
 ---
 
 ### 5. **Funciones Serverless**
-- **Function App**: Procesa eventos y tareas específicas de forma escalable y bajo demanda.  
-  Conectada tanto al **Queue Storage** como a la **PokeAPI** para procesar información y actualizar datos en el sistema.
+- **Function App**: Procesa eventos desencadenados por la Queue Storage. Conectada tanto al **Queue Storage** como a la **PokeAPI** para procesar información y actualizar datos en el sistema.
 
 ---
 
 ### 6. **Servicio Externo**
-- **PokeAPI**: API pública de donde se obtiene la información base de Pokémon.  
-  La aplicación integra y procesa estos datos para mostrarlos de forma personalizada.
+- **PokeAPI**: API pública de donde se obtiene la información base de los pokemons.  
 
 ---
 
@@ -69,18 +66,18 @@ El sistema sigue una arquitectura serverless con los siguientes componentes:
 
 **Backend** (FastAPI): API REST para gestión de reportes, Comunicación con base de datos, Blob Storage y Worker
 
-**Worker** (Azure Function): Procesamiento asíncrono Consulta a PokeAPI Generación de CSV con Pandas
+**Worker** (Azure Function): Procesamiento asíncrono, Consulta a la PokeAPI y Generación de CSV con Pandas
 
 **Almacenamiento**: Azure SQL Database (metadatos), Blob Storage (archivos CSV)
 
-**Infraestructura**: Terraform para provisioning
+**Infraestructura**: Terraform para provisionamiento
 
 ---
 
 ---
 ## Funcionalidades Implementadas
 
-### Tarea 1: Eliminación Completa de Reportes (25pts)
+### Tarea 1: Eliminación Completa de Reportes
 
 **Implementación**:
 
@@ -89,7 +86,7 @@ El sistema sigue una arquitectura serverless con los siguientes componentes:
 - Actualización dinámica de la lista tras eliminación (renderización nueva)
 
 **Backend**:
-- Nuevo endpoint `DELETE /api/report/{id}`
+- Nuevo endpoint *`DELETE /api/report/{id}`*
 - Eliminación de csv en Blob Storage y su registro en la base de datos SQL Server
 
 ### Tarea 2: Enriquecimiento de csv
@@ -129,7 +126,7 @@ El sistema sigue una arquitectura serverless con los siguientes componentes:
 
 **Base de datos**:
 - Se agregó el campo *sample_size* a la tabla *requests*
-- Se modificó el procedimiento almacenado **create_poke_request* para que acepte el campo *sample_size* y lo retorne con el *id*
+- Se modificó el procedimiento almacenado *create_poke_request* para que acepte el campo *sample_size* y lo retorne con el *id*
 
 **Worker Azure Function**:
 - Recupera el campo *sample_size* de la Azure Queue
@@ -153,10 +150,17 @@ El sistema sigue una arquitectura serverless con los siguientes componentes:
 
 ## Enlaces
 
+### Repositorios
+
 - [Terraform/infra](https://github.com/carlos-fl/terraform-pokeapi)
 - [UI/Frontend](https://github.com/carlos-fl/pokeapi-ui)
 - [Worker Function Python](https://github.com/carlos-fl/pokeapi-function)
 - [Scripts](https://github.com/carlos-fl/pokeapi-scripts)
 - [pokeapi-api](https://github.com/carlos-fl/pokeapi-api)
+
+### Servicios desplegados
+
+- [API](https://api-pokequeue-dev-1802.azurewebsites.net/)
+- [UI](https://ui-pokequeue-dev-1802.azurewebsites.net/)
 
 --- 
