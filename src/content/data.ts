@@ -59,7 +59,6 @@ export const data: Data = {
           },
           {
             title: "Arquitectura Escalable para Plataforma de Comercio Electrónico en Azure",
-            detailURL: "/projects/Ecommerce-terraform",
             date: "Julio 2025",
             desc: "Diseñé e implementé una arquitectura robusta y escalable para una plataforma de comercio electrónico utilizando servicios en la nube de Azure. El sistema soporta altos volúmenes de transacciones, proporciona una experiencia de usuario fluida mediante un portal web centralizado y permite la gestión completa de productos y pedidos a través de un backoffice. Además, incluye capacidades analíticas en tiempo real basadas en los datos de ventas.",
             stack: ["Terraform"],
@@ -82,7 +81,6 @@ export const data: Data = {
           },
           {
             title: "Sistema de Registro UNAH",
-            detailURL: "/projects/registro-unah",
             date: "Abril 2025",
             desc: "Una plataforma web para gestionar procesos académicos y administrativos en la UNAH. Incluye módulos para admisiones, matrícula de estudiantes, acceso a biblioteca y chat interno. Las herramientas para docentes permiten la carga de calificaciones, gestión de recursos del curso y funciones de coordinación. Diseñada para centralizar y optimizar las operaciones universitarias para estudiantes y personal.",
             stack: ["PHP", "MySQL", "Javascript", "HTML", "CSS", "Bootstrap"],
@@ -92,7 +90,6 @@ export const data: Data = {
           },
           {
             title: "ETL",
-            detailURL: "/projects/etl",
             date: "Diciembre 2024",
             desc: "Una aplicación web para diseñar y ejecutar procesos ETL (Extracción, Transformación, Carga). Ofrece una interfaz visual para construir flujos de datos sin escribir código. Inspirada en Visual Studio Integration Services, proporciona funcionalidad de arrastrar y soltar. Simplifica tareas de integración de datos para usuarios no técnicos.",
             stack: ["Javascript", "HTML", "CSS", "Bootstrap", "NodeJS", "Express"], 
@@ -102,7 +99,6 @@ export const data: Data = {
           },
           {
             title: "CRUD DB",
-            detailURL: "/projects/crud-db",
             date: "Julio 2024",
             desc: "Una herramienta de escritorio para gestionar bases de datos a través de una interfaz amigable. Permite asignar roles y permisos, crear bases de datos, tablas y usuarios, así como llenar tablas con datos. Diseñada como una alternativa visual a SQL Workbench, con todas las operaciones realizadas mediante la interfaz gráfica, sin necesidad de comandos.",
             stack: ["Python", "PyQt5", "SQL Server"],
@@ -112,7 +108,6 @@ export const data: Data = {
           },
           {
             title: "CodeSpace",
-            detailURL: "/projects/codespace",
             date: "Diciembre 2023",
             desc: "Una aplicación web Full Stack diseñada para programación en equipo en tiempo real. Ofrece autenticación de usuarios, integración con base de datos y soporte para múltiples lenguajes de programación. Inspirada en plataformas como CodePen, permite la edición colaborativa de código en el navegador. Construida para facilitar el trabajo en equipo y la creación de prototipos.",
             stack: ["Javascript", "HTML", "CSS", "NodeJS", "MongoDB", "Express"],

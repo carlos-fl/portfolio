@@ -104,21 +104,30 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
                       }
                     </h6>
                   </div>
-                  <div className="flex justify-start">
-                    <div className="mr-2">
-                      <a href={ project.github } target="_blank" title="github">
-                        <i className="fa-brands fa-github text-[var(--bg-tag)] text-xl mt-2"></i>
-                      </a>
+                  <div className="flex justify-between">
+                    <div className="flex">
+                      <div className="mr-2">
+                        <a href={ project.github } target="_blank" title="github">
+                          <i className="fa-brands fa-github text-[var(--bg-tag)] text-xl mt-2"></i>
+                        </a>
+                      </div>
+                      {
+                        project.urls.map((url: URL, i: number) => (
+                          <div key={ i } className="mr-2">
+                            <a href={ url.link } target="_blank" title={ url.title }>
+                              <i className="fa-solid fa-arrow-up-right-from-square text-xl text-[var(--bg-tag)] mt-2"></i>
+                            </a>
+                          </div>
+                        ))
+                      }
                     </div>
+
+                    <div>
                     {
-                      project.urls.map((url: URL, i: number) => (
-                        <div key={ i } className="mr-2">
-                          <a href={ url.link } target="_blank" title={ url.title }>
-                            <i className="fa-solid fa-arrow-up-right-from-square text-xl text-[var(--bg-tag)] mt-2"></i>
-                          </a>
-                        </div>
-                      ))
+                    WINDOW_WIDTH < MAX_WIDTH && project?.detailURL &&
+                      <a href={project?.detailURL} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{ projectLinkNameDetail }</a>
                     }
+                    </div>
                   </div>  
               </div>
           </div>
