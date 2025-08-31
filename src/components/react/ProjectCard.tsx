@@ -88,7 +88,7 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
         !isFocused &&
         projects.map((project: Project) => (
           <div onClick={ (event) => { WINDOW_WIDTH >= MAX_WIDTH && showDescription(event, project) } } className="flex flex-col h-auto cursor-zoom-in hover:scale-105 transition-transform duration-300 bg-[var(--card-color)] mb-2 mx-3 rounded-lg shadow-sm">
-            <div className="flex flex-col justify-start rounded-t-lg overflow-hidden">
+            <div className="flex flex-col justify-start rounded-t-lg max-h-48 overflow-hidden">
               <img className="object-contain w-full h-auto" src={ project.image } alt={ project.title } />
             </div>
 
