@@ -11,7 +11,7 @@ export interface Project {
   stack: Array<string>,
   image: string,
   urls: Array<URL>,
-  github: string
+  github?: string
 }
 
 export interface URL {

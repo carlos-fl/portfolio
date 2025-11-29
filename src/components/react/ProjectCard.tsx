@@ -55,9 +55,11 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
             </div>
             <div className="flex justify-start">
               <div className="mr-2">
+                { clickedProject?.github && (
                 <a href={ clickedProject?.github } target="_blank" title="github">
                   <i className="fa-brands fa-github text-[var(--bg-tag)] text-xl mt-2"></i>
                 </a>
+                )}
               </div>
               <div className="flex justify-between w-full">
                 <div className="flex">
@@ -107,9 +109,11 @@ export function ProjectCard({ projects }: { projects: Array<Project> }) {
                   <div className="flex justify-between">
                     <div className="flex">
                       <div className="mr-2">
+                        { project.github && (
                         <a href={ project.github } target="_blank" title="github">
                           <i className="fa-brands fa-github text-[var(--bg-tag)] text-xl mt-2"></i>
                         </a>
+                        )}
                       </div>
                       {
                         project.urls.map((url: URL, i: number) => (

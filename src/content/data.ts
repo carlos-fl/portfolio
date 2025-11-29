@@ -33,6 +33,24 @@ export const data: Data = {
       "projects": 
         [
           {
+            title: "Sistema de Seguimiento Geolocalizado de Buses en Tiempo Real",
+            date: "Noviembre 2025",
+            desc: "Este sistema permite a los Estudiantes visualizar en tiempo real la ubicación de los buses del pilotaje de transporte gratuito de la UNAH. Utiliza la API de Google Maps para mostrar el recorrido, calcular el tiempo estimado de llegada a cada estación y actualizar dinámicamente la posición del Bus. Además, el sistema indica qué estaciones ya han sido visitadas, facilitando que los estudiantes planifiquen sus desplazamientos con mayor precisión y mejorando la accesibilidad y eficiencia general del servicio de transporte.",
+            stack: ["Supabase", "Edge Functions", "Google Maps API"],
+            image: "/portfolio-images/transporte-unah.png",
+            urls: []
+          },
+          {
+            title: "Intercambio Virtual Internacional – St. John’s University & PUC",
+            date: "Octubre 2025",
+            desc: "Participé en un proyecto colaborativo internacional para desarrollar un guideline sobre la mitigación del hackeo a PIX, el sistema de pagos instantáneos en Brasil. Trabajamos en estrategias de prevención y respuesta ante incidentes de ciberseguridad, combinando análisis técnico y regulatorio. Esta experiencia fortaleció mis habilidades en seguridad digital, investigación aplicada y trabajo multicultural.",
+            stack: [],
+            image: "/portfolio-images/intercambio.png",
+            urls: [
+              { title:"Blog", link: "https://capstoneblog.tilda.ws/" }
+            ]
+          },
+          {
             title: "Generador de reportes",
             detailURL: "/projects/pokeapi",
             date: "Agosto 2025",
